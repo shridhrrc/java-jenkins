@@ -1,148 +1,106 @@
-# Java-App-Service-CI-CD-using-Maven-and-VSTS
+# E-commerce_website-in-java
 
-In this example we will be creating a continuous integration  and continuous deployment for a Java application to Azure App Services using Visual Studio Team Services (VSTS) & Apache Maven.
 
-## Deploy and Configure an Azure Web App
+## E - COMMERCE WEB PROJECT IN SPRING BOOT
 
-First we'll create an Azure Web App for us to depploy our Java Code to later.
 
-Navigate to the [Azure Portal](portal.azure.com)
 
-Click the **+** icon to navigate to the new resources creation tab.
+<!-- [![Contributors][contributors-shield]][contributors-url]
+[![MIT License][license-shield]][license-url]
+[![Isses][issues-shield]][issues-url]
 
-In the "Web + Mobile" tab, select the Web App option.
+-->
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+<br>
 
-Enter a unique `App Name`, Select the appropriate `Subscription` and `Resource Group`.
 
-Create a basic App Service Plan for scaling your web app and click **Create**.
 
-<img src="content/img1.png" width="400">
 
-Once the Web App has been successfully created navigate to the **Deployment Credentials** tab inside the Web App options. This will be used to publish files to the server directory.
+## Features
 
-Create an `FTP/deployment username` and `password` and **Save**.
+- Spring Boot
+- Spring Mvc, JDBC , Jsp Servlet
+- ADMIN MODULE + USER MODULE
+- CRUD OPERATION
+- easy to understabd beginner friendly
 
-<img src="content/img2.png" width="600">
 
-Navigate to the **Application Settings** tab.
 
-Turn Java on by selecting the `Java Version`: Java 8. Use **Tomcat 8.5.6** as your Web Container.
 
-**Save** the Web App Settings.
+## How To Run ?
 
-<img src="content/img3.png" width="800">
+- Pre requirement:- Spring boot Installed in Eclipse IDE ,  mysql Database , xampp 
 
-## Create a VSTS code project
+- please make sure you have eclipse ide enterprise for web development if not then re install set up & choose web option.
+<img width="169" alt="image" src="https://user-images.githubusercontent.com/81226571/178137583-578558de-ff7e-498b-bb00-927dd46b4fb0.png">
 
-Navigate to your [Visual Studio Profile](https://app.vsaex.visualstudio.com) and sign in.
 
-> To create a visual Studio account follow the documentation [here](https://www.visualstudio.com/team-services/).
+ (1)
+```sh
+Download and import project in Eclipse Ide
+```
+ (2)
+```sh
+ Make database name :- springproject 
+ ```
+  (3)
+```sh
+ import springproject.sql file in database to Create all table 
+ ```
 
-Select a team and create a **New Project**.
-
-<img src="content/img4.png" width="800">
-
-Name your Project. Select **Git** as your version control. Click **Create**
-
-<img src="content/img5.png" width="800">
-
-Once the project has bee8 created, Clone the repository locally using the repo URI.
-Push the contents of the sample Java App in this example or your own. Be sure to include a POM.xml file for Maven to build your application.
-
-<img src="content/img6.png" width="800">
-
-On your local machine use the following git commands:
-
-``` Powershell
-
-PS C:\> git init
-PS C:\> git remote add origin https://<teamname>.visualstudio.com/_git/<projectname>
-PS C:\> git add .
-PS C:\> git commit -m "Working Java App"
-PS C:\> git push origin master
-
+(4)
+```sh
+Right click project and run as spring boot & open:- http://localhost:8080/
 ```
 
-Once your initial commit is completed, navigate to the **Code** tab on the top menu. Your code will be viewable now in VSTS.
+## project directory 
+<img width="302" alt="image" src="https://user-images.githubusercontent.com/81226571/178137751-c02d40b5-e718-4aad-816a-f45807612e5c.png">
+<h4> MVC WorkFlow: </h4>
+    → in the Admincontroller.java & userController.java files having a mapping based function which returns file name.<br>
+    → in Src->main->webapp->views  following Jsp file will be executing.
 
-<img src="content/img7.png" width="800">
+## log in 
+ADMIN Module (http://localhost:8080/admin) 
+-  user name:- admin
+-  password :- 123
+-  Note(above default username and password , it can be change in the database)
 
-## Create a Maven build definition in VSTS
+  User module
+-  user name:- jay 
+-  password:- 123
 
-In this step we will create a Build definition in VSTS that compiles our java code using Apache Maven. We will also configure the build tasks to be trigger continuous with commits so a build in processed for all repo commits.
+## Important link
+- 𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝗽𝗿𝗼𝗷𝗲𝗰𝘁 𝘃𝗶𝗱𝗲𝗼 𝗪𝗼𝗿𝗸𝗶𝗻𝗴 𝗗𝗲𝗺𝗼 + 𝘀𝘁𝗲𝗽 𝗯𝘆 𝘀𝘁𝗲𝗽 𝗲𝘅𝗲𝗰𝘂𝘁𝗶𝗼𝗻 𝗹𝗶𝗻𝗸 ::---  [  click here  ](https://youtu.be/c6WWdINWSlI) [![youtube][youtube-shield]][youtube-url]
 
-Navigate to **Build & Release** in the top menu.
+- connect in Linked in ::---  [ https://www.linkedin.com/in/jay-gajera-a6496b204/]
+- instagram:- [https://instagram.com/jay_gajera_17]
 
-Select an empty Build Definition template.
 
-<img src="content/img8.png" width="800">
+## preview
+![img](https://github.com/jaygajera17/E-commerce_website-in-java/blob/main/JtProject/src/main/resources/Product%20Images/Screenshot%202022-04-11%20111601.jpg)
+![img](https://github.com/jaygajera17/E-commerce_website-in-java/blob/main/JtProject/src/main/resources/Product%20Images/Screenshot%202022-04-11%20111538.jpg)
+<img width="938" alt="image" src="https://user-images.githubusercontent.com/81226571/178270030-c4e9f485-fe0b-4bbb-804a-a28d2c182c7c.png">
 
-Add the following tasks to your template. Use the default settings
-* `Get Source` - This pulls the code repo from your targeted repository. By default it will be auto configured for the project repo.
-* `Maven pom.xml` - This  is the Project Object Model that compiles your java app's dependencies
-* `Publish Artifact` - this uploads the artifacts from the build to a drop directory to be deployed to your web app.
 
-<img src="content/img9.png" width="800">
 
-For more Maven build options go [here](https://www.visualstudio.com/en-us/docs/build/steps/build/maven).
+- **Star++** ⭐  if you  find helpful.
+<img alt="Night Coding" src="https://raw.githubusercontent.com/AVS1508/AVS1508/master/assets/Night-Coding.gif" align="center"/>
 
-Navigate to the **Triggers** tab for the Build Definition Template.
 
-Enable **Continuous Integration** and connect it with your project master branch. This will trigger the build to start for all commits.
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-url]: https://github.com/jaygajera17/E-commerce-project-springBoot/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/jaygajera17/E-commerce-project-springBoot.svg?style=for-the-badge
+[forks-url]: https://github.com/jaygajera17/E-commerce-project-springBoot/network/members
+[stars-shield]: https://img.shields.io/github/stars/jaygajera17/E-commerce-project-springBoot.svg?style=for-the-badge
+[stars-url]: https://github.com/jaygajera17/E-commerce-project-springBoot/stargazers
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]:  https://www.linkedin.com/in/jay-gajera-a6496b204/
 
-<img src="content/img10.png" width="800">
-
-Click **Save & Queue** to test your build.
-
-<img src="content/img11.png" width="800">
-
-You will see a log from the Agent that built your code. If any errors are generated extend the point of failure to debug.
-
-## Create an App Services release definition in VSTS
-
-Now that we have a build definition, we will generate a release definition the deploys our successful builds to our Web App in Azure.
-
-Navigate to the **Releases** tab and select **New Release Definition**.
-
-Select the **Deploy to Azure App Service template**.
-
-<img src="content/img12.png" width="800">
-
-In the definition select the `Azure Subscription` and the `App Service Name` of your web app you created earlier.
-
-For the `Destination or Folder` setting **Browse** to the `hello.war` file that was generated from the Build.
-
-Click **OK**.
-
-<img src="content/img13.png" width="400">
-
-Navigate to the **Triggers** tab in the Release Definition.
-
-Enable **Continuous Deployment** and link the Build Definition you previously created as your artifact source. This will configure your release to be triggered by a successful Build definition.
-
-<img src="content/img14.png" width="800">
-
-Finally *Save* and click **Queue Release**.
-
-## Validating Web App Deployments
-
-Navigate to the Azure portal and click your Web App URL. You will see this in your web app overview tab.
-
-<img src="content/img15.png" width="800">
-
-If the Release was successful you will see the sample Java App being displayed.
-
-<img src="content/img16.png" width="600">
-
----
-If you were unsuccessful verify that your Release Definition was successful in VSTS. Otherwise navigate to the site's Kudu Dashboard [yourwebappname].scm.azurewebsites.net 
-
-<img src="content/img17.png" width="800">
-
-Navigate to **Deployments** and you are able to see the which deployments were successful with the status code and Buil/Release ID.
-
-<img src="content/img18.png" width="800">
-
-Another common fix would be to navigate to the **Debug Console** in the Kudu Dashboard and rename your Hello.war file to ROOT.war usually found in this directory - D:\home\site\wwwroot\webapps> 
-
-<img src="content/img19.png" width="800">
+[youtube-shield]:https://img.shields.io/youtube/views/c6WWdINWSlI?style=social
+[youtube-url]:  https://youtu.be/c6WWdINWSlI
